@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Id pessoa:</strong>
+  <%= @pessoa_documento.id_pessoa %>
+</p>
+
+<p>
+  <strong>Descricao:</strong>
+  <%= @pessoa_documento.descricao %>
+</p>
+
+<%= link_to 'Edit', edit_pessoa_documento_path(@pessoa_documento) %> |
+<%= link_to 'Back', pessoa_documentos_path %>

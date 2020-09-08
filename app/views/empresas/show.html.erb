@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Razao social:</strong>
+  <%= @empresa.razao_social %>
+</p>
+
+<p>
+  <strong>Fantasia:</strong>
+  <%= @empresa.fantasia %>
+</p>
+
+<p>
+  <strong>Id endereco:</strong>
+    <% obj = Endereco.new %>
+    <%= obj.consulta_nome(@empresa.id_endereco) %>
+    <% obj.freeze %>
+</p>
+
+<p>
+  <strong>Logo tipo:</strong>
+  <%= @empresa.logo_tipo %>
+</p>
+
+<%= link_to 'Edit', edit_empresa_path(@empresa) %> |
+<%= link_to 'Back', empresas_path %>

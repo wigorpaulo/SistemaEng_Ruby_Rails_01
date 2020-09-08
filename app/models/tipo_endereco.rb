@@ -1,0 +1,2 @@
+class TipoEndereco < ApplicationRecord
+end

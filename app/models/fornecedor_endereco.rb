@@ -1,0 +1,2 @@
+class FornecedorEndereco < ApplicationRecord
+end

@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Id fornecedor:</strong>
+  <%= @fornecedor_endereco.id_fornecedor %>
+</p>
+
+<p>
+  <strong>Id endereco:</strong>
+  <%= @fornecedor_endereco.id_endereco %>
+</p>
+
+<p>
+  <strong>Id tipo endereco:</strong>
+  <%= @fornecedor_endereco.id_tipo_endereco %>
+</p>
+
+<%= link_to 'Edit', edit_fornecedor_endereco_path(@fornecedor_endereco) %> |
+<%= link_to 'Back', fornecedor_enderecos_path %>

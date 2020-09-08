@@ -1,0 +1,32 @@
+<%= form_with(model: pessoa_endereco, local: true) do |form| %>
+  <% if pessoa_endereco.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(pessoa_endereco.errors.count, "error") %> prohibited this pessoa_endereco from being saved:</h2>
+
+      <ul>
+      <% pessoa_endereco.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :id_pessoa %>
+    <%= form.number_field :id_pessoa %>
+  </div>
+
+  <div class="field">
+    <%= form.label :id_endereco %>
+    <%= form.number_field :id_endereco %>
+  </div>
+
+  <div class="field">
+    <%= form.label :id_tipo_endereco %>
+    <%= form.number_field :id_tipo_endereco %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

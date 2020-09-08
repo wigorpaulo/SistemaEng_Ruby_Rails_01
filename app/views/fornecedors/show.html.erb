@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Razao social:</strong>
+  <%= @fornecedor.razao_social %>
+</p>
+
+<p>
+  <strong>Fantasia:</strong>
+  <%= @fornecedor.fantasia %>
+</p>
+
+<p>
+  <strong>Cnpj:</strong>
+  <%= @fornecedor.cnpj %>
+</p>
+
+<%= link_to 'Edit', edit_fornecedor_path(@fornecedor) %> |
+<%= link_to 'Back', fornecedors_path %>

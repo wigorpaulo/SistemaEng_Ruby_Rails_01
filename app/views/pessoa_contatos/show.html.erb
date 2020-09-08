@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Id pessoa:</strong>
+  <%= @pessoa_contato.id_pessoa %>
+</p>
+
+<p>
+  <strong>Telefone:</strong>
+  <%= @pessoa_contato.telefone %>
+</p>
+
+<p>
+  <strong>Celular:</strong>
+  <%= @pessoa_contato.celular %>
+</p>
+
+<p>
+  <strong>Num whats zap:</strong>
+  <%= @pessoa_contato.num_whats_zap %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @pessoa_contato.email %>
+</p>
+
+<%= link_to 'Edit', edit_pessoa_contato_path(@pessoa_contato) %> |
+<%= link_to 'Back', pessoa_contatos_path %>

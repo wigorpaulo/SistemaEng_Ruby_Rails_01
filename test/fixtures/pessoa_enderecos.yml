@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  id_pessoa: 1
+  id_endereco: 1
+  id_tipo_endereco: 1
+
+two:
+  id_pessoa: 1
+  id_endereco: 1
+  id_tipo_endereco: 1

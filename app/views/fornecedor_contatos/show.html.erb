@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Id fornecedor:</strong>
+  <%= @fornecedor_contato.id_fornecedor %>
+</p>
+
+<p>
+  <strong>Telefone:</strong>
+  <%= @fornecedor_contato.telefone %>
+</p>
+
+<p>
+  <strong>Celular:</strong>
+  <%= @fornecedor_contato.celular %>
+</p>
+
+<p>
+  <strong>Num whats zap:</strong>
+  <%= @fornecedor_contato.num_whats_zap %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @fornecedor_contato.email %>
+</p>
+
+<%= link_to 'Edit', edit_fornecedor_contato_path(@fornecedor_contato) %> |
+<%= link_to 'Back', fornecedor_contatos_path %>

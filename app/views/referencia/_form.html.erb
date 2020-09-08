@@ -1,0 +1,22 @@
+<%= form_with(model: referencium, local: true) do |form| %>
+  <% if referencium.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(referencium.errors.count, "error") %> prohibited this referencium from being saved:</h2>
+
+      <ul>
+      <% referencium.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :ref_anomes %>
+    <%= form.number_field :ref_anomes %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

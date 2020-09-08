@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Descricao:</strong>
+  <%= @tipo_endereco.descricao %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @tipo_endereco.status %>
+</p>
+
+<%= link_to 'Edit', edit_tipo_endereco_path(@tipo_endereco) %> |
+<%= link_to 'Back', tipo_enderecos_path %>

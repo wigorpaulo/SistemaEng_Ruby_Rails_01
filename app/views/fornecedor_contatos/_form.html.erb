@@ -1,0 +1,42 @@
+<%= form_with(model: fornecedor_contato, local: true) do |form| %>
+  <% if fornecedor_contato.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(fornecedor_contato.errors.count, "error") %> prohibited this fornecedor_contato from being saved:</h2>
+
+      <ul>
+      <% fornecedor_contato.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :id_fornecedor %>
+    <%= form.number_field :id_fornecedor %>
+  </div>
+
+  <div class="field">
+    <%= form.label :telefone %>
+    <%= form.number_field :telefone %>
+  </div>
+
+  <div class="field">
+    <%= form.label :celular %>
+    <%= form.number_field :celular %>
+  </div>
+
+  <div class="field">
+    <%= form.label :num_whats_zap %>
+    <%= form.number_field :num_whats_zap %>
+  </div>
+
+  <div class="field">
+    <%= form.label :email %>
+    <%= form.text_field :email %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

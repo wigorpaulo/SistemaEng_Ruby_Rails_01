@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  descricao: MyString
+  uf: MyString
+  id_pais: 1
+
+two:
+  descricao: MyString
+  uf: MyString
+  id_pais: 1

@@ -1,0 +1,52 @@
+<%= form_with(model: estado, local: true) do |form| %>
+  <% if estado.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(estado.errors.count, "error") %> prohibited this estado from being saved:</h2>
+
+      <ul>
+        <% estado.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :descricao %>
+    <%= form.text_field :descricao %>
+  </div>
+
+  <div class="field">
+    <%= form.label :uf %>
+    <%= form.text_field :uf %>
+  </div>
+
+  <div class="field">
+
+    <%= form.label :id_pais %>
+
+    <select name="estado[id_pais]">
+
+      <% vConsulta = Pai.new %>
+      <% for obj in vConsulta.lista_obj do %>
+        <% if not @estado.nil? %>
+          <% if obj.id == @estado.id_pais %>
+            <option value="<%= obj.id %>" selected> <%= obj.descricao %> </option>
+          <% else %>
+            <option value="<%= obj.id %>"> <%= obj.descricao %> </option>
+          <% end %>
+        <% else %>
+          <option value="<%= obj.id %>"> <%= obj.descricao %> </option>
+        <% end %>
+      <% end %>
+      <% vConsulta.freeze %>
+
+    </select>
+
+
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

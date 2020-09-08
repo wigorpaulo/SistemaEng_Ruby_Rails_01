@@ -1,0 +1,39 @@
+<div align="center">
+  <%= form_tag '/logins', method: :post do %>
+    <h1>SistemaEng</h1>
+    <table>
+      <tr>
+        <td align="center">
+          <h2>Login</h2>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <span>
+            Usuário:
+          </span>
+          <input type="text" name="viewUser">
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <span>
+            Senha:
+          </span>
+          <input type="text" name="viewSenha">
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <%= submit_tag 'Logar' %>
+        </td>
+      </tr>
+
+    </table>
+
+  <% end %>
+</div>
+

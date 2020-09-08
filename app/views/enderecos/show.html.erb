@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Descricao:</strong>
+  <%= @endereco.descricao %>
+</p>
+
+<p>
+  <strong>Complemento:</strong>
+  <%= @endereco.complemento %>
+</p>
+
+<p>
+  <strong>Numero:</strong>
+  <%= @endereco.numero %>
+</p>
+
+<p>
+  <strong>Id bairro:</strong>
+  <% obj = Bairro.new %>
+  <%= obj.consulta_nome(@endereco.id_bairro) %>
+  <% obj.freeze %>
+</p>
+
+<p>
+  <strong>Id cep:</strong>
+  <% obj = Cep.new %>
+  <%= obj.consulta_nome(@endereco.id_cep) %>
+  <% obj.freeze %>
+</p>
+
+<%= link_to 'Edit', edit_endereco_path(@endereco) %> |
+<%= link_to 'Back', enderecos_path %>

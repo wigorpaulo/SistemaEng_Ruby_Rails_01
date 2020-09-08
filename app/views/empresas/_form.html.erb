@@ -1,0 +1,55 @@
+<%= form_with(model: empresa, local: true) do |form| %>
+  <% if empresa.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(empresa.errors.count, "error") %> prohibited this empresa from being saved:</h2>
+
+      <ul>
+      <% empresa.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :razao_social %>
+    <%= form.text_field :razao_social %>
+  </div>
+
+  <div class="field">
+    <%= form.label :fantasia %>
+    <%= form.text_field :fantasia %>
+  </div>
+
+  <div class="field">
+    <%= form.label :id_endereco %>
+
+      <select name="empresa[id_endereco]">
+
+      <% vConsulta = Endereco.new %>
+      <% for obj in vConsulta.lista_obj do %>
+        <% if not @empresa.nil? %>
+          <% if obj.id == @empresa.id_endereco %>
+            <option value="<%= obj.id %>" selected> <%= obj.descricao %> </option>
+          <% else %>
+            <option value="<%= obj.id %>"> <%= obj.descricao %> </option>
+          <% end %>
+        <% else %>
+          <option value="<%= obj.id %>"> <%= obj.descricao %> </option>
+        <% end %>
+      <% end %>
+      <% vConsulta.freeze %>
+
+    </select>
+
+  </div>
+
+  <div class="field">
+    <%= form.label :logo_tipo %>
+    <%= form.text_field :logo_tipo %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

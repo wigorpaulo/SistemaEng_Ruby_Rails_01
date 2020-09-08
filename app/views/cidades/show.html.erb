@@ -1,0 +1,17 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Descricao:</strong>
+  <%= @cidade.descricao %>
+</p>
+
+<p>
+  <strong>Estado:</strong>
+  <% obj = Estado.new %>
+  <%= obj.consulta_nome(@cidade.id_estado) %>
+  <% obj.freeze %>
+</p>
+
+<%= link_to 'Edit', edit_cidade_path(@cidade) %> |
+<%= link_to 'Back', cidades_path %>
+

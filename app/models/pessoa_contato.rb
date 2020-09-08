@@ -1,0 +1,2 @@
+class PessoaContato < ApplicationRecord
+end

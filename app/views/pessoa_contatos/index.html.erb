@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Pessoa Contatos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Id pessoa</th>
+      <th>Telefone</th>
+      <th>Celular</th>
+      <th>Num whats zap</th>
+      <th>Email</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @pessoa_contatos.each do |pessoa_contato| %>
+      <tr>
+        <td><%= pessoa_contato.id_pessoa %></td>
+        <td><%= pessoa_contato.telefone %></td>
+        <td><%= pessoa_contato.celular %></td>
+        <td><%= pessoa_contato.num_whats_zap %></td>
+        <td><%= pessoa_contato.email %></td>
+        <td><%= link_to 'Show', pessoa_contato %></td>
+        <td><%= link_to 'Edit', edit_pessoa_contato_path(pessoa_contato) %></td>
+        <td><%= link_to 'Destroy', pessoa_contato, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Pessoa Contato', new_pessoa_contato_path %>

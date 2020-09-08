@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Referencia</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Ref anomes</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @referencia.each do |referencium| %>
+      <tr>
+        <td><%= referencium.ref_anomes %></td>
+        <td><%= link_to 'Show', referencium %></td>
+        <td><%= link_to 'Edit', edit_referencium_path(referencium) %></td>
+        <td><%= link_to 'Destroy', referencium, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Referencium', new_referencium_path %>

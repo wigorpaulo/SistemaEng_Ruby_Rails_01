@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>SistemaEng</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <style>
+      table {
+          border-collapse: collapse;
+      }
+
+      table, tr, td {
+          border: solid 1px black;
+      }
+
+      .menu {
+          border: none;
+      }
+
+    </style>
+  </head>
+
+  <body>
+
+    <div align="center">
+      <table style="width: 1024px; height: 768px;">
+        <tr>
+          <td colspan="2" style="height: 100px;">
+            <h1>Sistema Eng</h1>
+          </td>
+        </tr>
+
+        <tr>
+          <td width="200px" style="vertical-align: top;">
+             <table style="width: 100%; height: 100%" class="menu">
+                <tr class="menu">
+                  <td style="height: 80%; vertical-align: top;" class="menu">
+                    <%= render '/layouts/menu_lateral'  %>
+                  </td>
+                </tr>
+                <tr style="height: 20%; vertical-align: bottom;" class="menu">
+                  <td class="menu">
+                    <%= link_to 'Sair do Sistema', logins_path, class: "article" %>
+                  </td>
+                </tr>
+             </table>
+          </td>
+
+          <td width="824px" style="vertical-align: top;">
+            <%= yield %>
+          </td>
+        </tr>
+
+      </table>
+    </div>
+
+  </body>
+</html>

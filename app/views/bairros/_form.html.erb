@@ -1,0 +1,46 @@
+<%= form_with(model: bairro, local: true) do |form| %>
+  <% if bairro.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(bairro.errors.count, "error") %> prohibited this bairro from being saved:</h2>
+
+      <ul>
+      <% bairro.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :descricao %>
+    <%= form.text_field :descricao %>
+  </div>
+
+  <div class="field">
+    <%= form.label :id_cidade %>
+
+    <select name="bairro[id_cidade]">
+
+      <% vConsulta = Cidade.new %>
+      <% for obj in vConsulta.lista_obj do %>
+        <% if not @bairro.nil? %>
+          <% if obj.id == @bairro.id_cidade %>
+            <option value="<%= obj.id %>" selected> <%= obj.descricao %> </option>
+          <% else %>
+            <option value="<%= obj.id %>"> <%= obj.descricao %> </option>
+          <% end %>
+        <% else %>
+          <option value="<%= obj.id %>"> <%= obj.descricao %> </option>
+        <% end %>
+      <% end %>
+      <% vConsulta.freeze %>
+
+    </select>
+
+
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
